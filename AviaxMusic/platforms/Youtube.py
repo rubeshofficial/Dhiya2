@@ -308,9 +308,12 @@ class YouTubeAPI:
                 "prefer_ffmpeg": True,
                 "postprocessors": [
                     {
-                        "key": "FFmpegAudioConvertor",
+                        "key": "FFmpegExtractAudio",
                         "preferredcodec": "mp3",
                         "preferredquality": "320",
+                        "postprocessor_args": [
+                        "-af",
+                        "stereotools=mlev=5,bass=g=10:f=100:w=0.3"
                     }
                 ],
                 "cookiefile": cookies_file,  # Add cookie file option here
