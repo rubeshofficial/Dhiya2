@@ -29,10 +29,12 @@ from strings import get_string
 @LanguageStart
 async def start_pm(client, message: Message, _):
     await add_served_user(message.from_user.id)
+    await message.react("🕊️")
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = help_pannel(_)
+             await message.reply_sticker("CAACAgUAAxkBAAEBMgJn8SJ80uYZ7Jg-sJXueokitNZueQAC0Q8AAu8GKVd1IWP6F8MJVDYE")
             return await message.reply_photo(
                 photo=config.START_IMG_URL,
                 caption=_["help_1"].format(config.SUPPORT_GROUP),
@@ -86,6 +88,7 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
+        await message.reply_sticker("CAACAgUAAxkBAAEBMgJn8SJ80uYZ7Jg-sJXueokitNZueQAC0Q8AAu8GKVd1IWP6F8MJVDYE")
         UP, CPU, RAM, DISK = await bot_sys_stats()
         await message.reply_photo(
             photo=config.START_IMG_URL,
