@@ -313,7 +313,7 @@ class YouTubeAPI:
                         "preferredquality": "320",
                         "postprocessor_args": [
                         "-af",
-                        "stereotools=mlev=5,bass=g=10:f=100:w=0.3"
+                        "stereotools=mlev=5,bass=g=10:f=100:w=0.3" ]
                     }
                 ],
                 "cookiefile": cookies_file,  # Add cookie file option here
